@@ -2,7 +2,7 @@
 
 # <center> AI Models Examples </center>
 
-<center> This repository was created to understand the model </center>
+<center> This repository was created to understand the model <br> </center>
 <center> on which GenAI is based, and was written as an example. </center>
 
 ---
@@ -10,13 +10,11 @@
 
 ## [(1) Auto-Regressive Model]()
 
----
 
 # 2. Understanding Large Language Model
 
 ## [(1)]()
 
-----
 
 # Requirements
 

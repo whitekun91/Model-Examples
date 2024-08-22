@@ -10,6 +10,8 @@
 
 - Auto-Regressive Model
   - [Reference](https://en.wikipedia.org/wiki/Autoregressive_model) / [Code Practice](https://github.com/whitekun91/Model-Examples/tree/main/AR)
+- Generative Adversarial Nets
+  - [Reference](https://arxiv.org/pdf/1406.2661) / [Code Practice]() 
 
 
 # 2. Understanding Large Language Model

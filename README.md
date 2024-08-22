@@ -8,7 +8,8 @@
 ---
 # 1. Understanding Diffusion Model
 
-- [(1) Auto-Regressive Model](https://github.com/whitekun91/Model-Examples/tree/main/AR)
+- Auto-Regressive Model
+  - / [Code Practice](https://github.com/whitekun91/Model-Examples/tree/main/AR)
 
 
 # 2. Understanding Large Language Model

@@ -1,0 +1,30 @@
+{
+  "data_loader" : {
+    "file_path" : "./dataset/",
+    "batch_size" : 128,
+    "mnist_size" : 28,
+    "norm_mean" : 0.5,
+    "norm_std" : 0.5
+  },
+
+
+  "generator" : {
+    "latent_dim": 100,
+    "initial_gen_nodes": 128,
+    "batch_eps": 0.8,
+    "neg_slope": 0.2,
+    "mnist_size": 28
+  },
+
+  "discriminator" : {
+    "initial_dis_nodes" : 512,
+    "neg_slope" : 0.2,
+    "mnist_size" : 28
+  },
+
+  "learning_rate" : 0.0002,
+  "betas_min" : 0.5,
+  "betas_max" : 0.999,
+  "n_epochs" : 200,
+  "sample_interval" : 2000
+}

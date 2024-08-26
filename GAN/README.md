@@ -9,7 +9,6 @@
 
 - MNIST Image Extractor
   - [Image Extractor](https://github.com/whitekun91/Model-Examples/blob/main/GAN/extractor/data_loader.py)
-
 - Model 
   - [Model : Pytorch](https://github.com/whitekun91/Model-Examples/blob/main/GAN/Model/GAN.py)
   

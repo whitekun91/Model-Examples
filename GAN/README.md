@@ -7,11 +7,9 @@
 <center> The generator's goal is to produce data that is indistinguishable from the real data, <br></center>
 <center> and the discriminator's goal is to accurately differentiate between real and generated data. <br> </center>
 
----
-## [(1) []]()
-## [(2) []]()
+## [(1) [Model : Pytorch]](https://github.com/whitekun91/Model-Examples/blob/main/GAN/Model/GAN.py)
 
----
+## [(2) []]()
 
 # Requirements
 

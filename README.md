@@ -11,7 +11,7 @@
 - Auto-Regressive Model
   - [Reference](https://en.wikipedia.org/wiki/Autoregressive_model) / [Code Practice](https://github.com/whitekun91/Model-Examples/tree/main/AR)
 - Generative Adversarial Nets
-  - [Reference](https://arxiv.org/pdf/1406.2661) / [Code Practice]() 
+  - [Reference](https://arxiv.org/pdf/1406.2661) / [Code Practice](https://github.com/whitekun91/Model-Examples/tree/main/GAN) 
 
 
 # 2. Understanding Large Language Model

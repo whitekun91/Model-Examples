@@ -52,3 +52,4 @@ class Discriminator(nn.Module):
         flattened = img.view(img.size(0), -1)
         output = self.model(flattened)
         return output
+

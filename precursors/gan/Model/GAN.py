@@ -1,7 +1,24 @@
+"""
+GAN for MNIST (fully-connected Generator and Discriminator).
+
+Generator G:
+    z ~ noise [B, latent_dim] -> MLP (+ optional BatchNorm) -> Tanh
+    -> view [B, 1, H, H]  (values in [-1,1] to match normalized MNIST)
+
+Discriminator D:
+    image [B,1,H,H] -> flatten [B, H*H] -> MLP -> Sigmoid -> scalar in (0,1)
+"""
+
 import torch.nn as nn
 
 
 class Generator(nn.Module):
+    """
+    Upsampling MLP: latent_dim -> ... -> H*H pixels.
+
+    Blocks: Linear [+ BatchNorm1d] + LeakyReLU, repeated; final Linear + Tanh.
+    """
+
     def __init__(self, latent_dim, initial_gen_nodes, batch_eps, neg_slope, mnist_size):
         super(Generator, self).__init__()
         self.latent_dim = latent_dim
@@ -33,6 +50,10 @@ class Generator(nn.Module):
 
 
 class Discriminator(nn.Module):
+    """
+    Downsampling MLP: H*H -> ... -> 1 logit, passed through Sigmoid for fake/real prob.
+    """
+
     def __init__(self, initial_dis_nodes, neg_slope, mnist_size):
         super(Discriminator, self).__init__()
         self.initial_dis_nodes = initial_dis_nodes
@@ -52,4 +73,3 @@ class Discriminator(nn.Module):
         flattened = img.view(img.size(0), -1)
         output = self.model(flattened)
         return output
-

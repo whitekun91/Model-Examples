@@ -1,13 +1,28 @@
+"""
+Autoregressive time-series helpers using statsmodels AutoReg.
+
+Typical specification: y_t = c + sum_i phi_i * y_{t-i} + eps
+"""
+
 from statsmodels.tsa.ar_model import AutoReg
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from ..utils.visualization import auto_regressive_plot_visualization
 
 
 def auto_regressive(dataset, target_value, days, count, lag_value):
+    """
+    Fit AutoReg on the training segment; hold out the last (days * count) points as test.
+
+    Args:
+        dataset: DataFrame containing the target column.
+        target_value: Column name for the series.
+        days, count: Test length = days * count (e.g. 365 days * 1 year).
+        lag_value: AR order (number of lags).
+    """
     values = dataset[target_value]
     train, test = values[:len(values) - (days * count)], values[len(values) - (days * count):]
 
-    # lags = creating coefficient counts
+    # AutoReg(train, lags=lag_value): y_t regressed on y_{t-1}, ..., y_{t-lag_value}
     model = AutoReg(train, lags=lag_value)
     model_fit = model.fit()
 
@@ -16,6 +31,7 @@ def auto_regressive(dataset, target_value, days, count, lag_value):
 
 
 def predict_value(model, train, test):
+    """One-step-ahead style predictions on the test index; prints MSE/MAE and plots."""
     prediction = model.predict(start=len(train), end=len(train) + len(test)-1, dynamic=False)
 
     print('MSE : ', mean_squared_error(test, prediction))

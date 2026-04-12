@@ -1,4 +1,4 @@
-from AR.utils.visualization import lag_plot_visualization, auto_correlation_plot_visualization
+from utils.visualization import lag_plot_visualization, auto_correlation_plot_visualization
 
 import pandas as pd
 
